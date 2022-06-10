@@ -9,6 +9,7 @@ public class GameDirector : MonoBehaviour
 {
 	[SerializeField] GameGUI gameGUI; //GUIを更新するクラス
 	[SerializeField] RankingSystem rankingSystem; //ランキングを管理するクラス
+	[SerializeField] AdsScript adsScript; //広告のクラス
 	[SerializeField] Transform tableParent;  //盤面の親Transform
 	[SerializeField] GameObject matchEffect; //盤面が揃った時のエフェクト
 
@@ -167,7 +168,10 @@ public class GameDirector : MonoBehaviour
 
 		rankingSystem.GetLeaderboardAroundPlayer(RankingSystem.LeaderBoardType.Result, useGameMode); //ランキングの取得
 		gameGUI.gameContent.TimeOutTextFade(1.0f); //タイムアウトのテキストを非表示
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
+
+		adsScript.ShowAdsMovie();
+		yield return new WaitForSeconds(1.0f);
 
 		//結果を表示
 		StartCoroutine(Result());

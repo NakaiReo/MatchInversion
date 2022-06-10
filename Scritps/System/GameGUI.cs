@@ -32,6 +32,9 @@ public abstract class GameGUIContent
 	public abstract void DisableAction();
 }
 
+/// <summary>
+/// タイトルシーンのコンテンツ
+/// </summary>
 [System.Serializable]
 public class TitleContent : GameGUIContent
 {
@@ -94,6 +97,9 @@ public class TitleContent : GameGUIContent
 	}
 }
 
+/// <summary>
+/// ゲームシーンのコンテンツ
+/// </summary>
 [System.Serializable]
 public class GameContent : GameGUIContent
 {
@@ -192,6 +198,9 @@ public class GameContent : GameGUIContent
 	}
 }
 
+/// <summary>
+/// リザルトシーンのコンテンツ
+/// </summary>
 [System.Serializable]
 public class ResultContent : GameGUIContent
 {
@@ -212,10 +221,14 @@ public class ResultContent : GameGUIContent
 	}
 }
 
+/// <summary>
+/// すべてのシーンを統括するクラス
+/// </summary>
 public class GameGUI : MonoBehaviour
 {
 	public static GameGUI ins = null;
 
+	//シーンの種類
     public enum SceneType
 	{
 		Title,
@@ -223,7 +236,7 @@ public class GameGUI : MonoBehaviour
 		Result,
 	}
 
-	public SceneType currentScene { get; private set; }
+	public SceneType currentScene { get; private set; } //現在のシーン
 
 	public delegate void CallBackAction(); 
 
@@ -247,8 +260,17 @@ public class GameGUI : MonoBehaviour
 	}
 }
 
+/// <summary>
+/// 共通処理
+/// </summary>
 public static class TMP_Extend
 {
+	/// <summary>
+    /// テキストをフェードさせる
+    /// </summary>
+    /// <param name="tmpText">テキストコンポーネント</param>
+    /// <param name="str">内容</param>
+    /// <param name="time">時間</param>
 	public static void FadeOutText(this TMP_Text tmpText, string str, float time)
 	{
 		tmpText.color = new Color(0, 0, 0, 0);
@@ -256,6 +278,11 @@ public static class TMP_Extend
 		tmpText.DOColor(ColorDirector.RESULT_COLOR, time);
 	}
 
+	/// <summary>
+    /// キャンバスのフェード
+    /// </summary>
+    /// <param name="canvasGroup">キャンバスグループコンポーネント</param>
+    /// <param name="time">時間</param>
 	public static void FadeOutCanvasGroup(this CanvasGroup canvasGroup, float time)
 	{
 		canvasGroup.alpha = 0;

@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// 盤面の大きさを処理する
+/// </summary>
 [RequireComponent(typeof(GridLayoutGroup))]
 public class TableLayout : MonoBehaviour
 {
 	[SerializeField] GridLayoutGroup gridLayout;
 
-	public int gridSize;
-	public float space;
+	public int gridSize; //グリッドの大きさ
+	public float space;  //グリッドごとの隙間
 
 	private void OnValidate()
 	{
@@ -18,15 +21,16 @@ public class TableLayout : MonoBehaviour
 		Layout();
 	}
 
+	/// <summary>
+    /// 盤面の大きさを設定
+    /// </summary>
 	public void Layout()
 	{
 		RectTransform rectTransform = GetComponent<RectTransform>();
 		float rectSize = rectTransform.rect.width;
 		rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, rectSize);
 
-		Debug.Log(rectSize);
 		float cellSize = rectSize / gridSize - space * (gridSize - 1);
-		Debug.Log(cellSize);
 
 		gridLayout.cellSize = Vector2.one * cellSize;
 		gridLayout.spacing  = Vector2.one * space;

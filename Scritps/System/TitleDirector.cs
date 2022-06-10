@@ -95,6 +95,11 @@ public class TitleDirector : MonoBehaviour
         SoundDirector.ins.SE.Play("Cancel");
         gameGUI.titleContent.TitleSceneChange(TitleContent.TitleScene.MainTitle);
     }
+       
+    public void OnOpenPrivacyPolicy()
+    {
+        Application.OpenURL("https://docs.google.com/document/d/1HoajYu8Di52tLPVM_5CqhAEzHGGt9vv4HBUvJGyx7_g/edit?usp=sharing");
+    }
 
     /// <summary>
     /// プレイヤー名入力に名前を入れる

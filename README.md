@@ -45,7 +45,6 @@
   
 ### [プレイ動画 - Youtube](https://www.youtube.com/watch?v=WJsJ68m9RAc)  
   
-![サムネイル](ScreenShot/サムネイル.png)
 ![タイトル](ScreenShot/Title.png)
 ![ゲーム](ScreenShot/Game.png)
 ![ランキング](ScreenShot/Ranking.png)

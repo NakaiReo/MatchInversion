@@ -26,7 +26,9 @@
 現在は2種類のモードが存在しており、通常のモードである「Normal Mode」と、
 通常のルールに加え1盤面あたりに操作できる回数が決まっている「Limited Mode」がある。  
   
-### [Google Play](https://play.google.com/store/apps/details?id=com.DiceGearProject.MatchInversion)
+### [Google Play](https://play.google.com/store/apps/details?id=com.DiceGearProject.MatchInversion)  
+  
+### [作品のダウンロード(PC版)](https://drive.google.com/drive/folders/10qCtv-LyuwGutwErUFJN6fsHPJILUeLh?usp=sharing)
   
 ## 開発目的  
 あまりスマホゲームを作ってこなかったので、就活に向けてスマホゲームを作るという目的で作り始めた。
